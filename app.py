@@ -2995,7 +2995,7 @@ class NeonTubeApp(ctk.CTk):
             font=ctk.CTkFont(family=FONT, size=13)).grid(
                 row=8, column=1, sticky="w", padx=(0, 14), pady=(12, 7))
         make_label(
-            card, "Die Sprache wird sofort gespeichert. Für weitere Sprachen werden Oberflächentexte online übersetzt und lokal gespeichert.",
+            card, "Die Sprache wird sofort gespeichert. Wichtige Texte sind offline verfügbar; weitere Oberflächentexte werden online übersetzt und lokal gespeichert.",
             11, MUTED, anchor="w", wraplength=680).grid(
                 row=9, column=0, columnspan=3, sticky="w",
                 padx=20, pady=(0, 8))
