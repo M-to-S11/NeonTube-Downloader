@@ -95,6 +95,10 @@ Für Downloads über einen bekannten YouTube-Link ist kein API-Schlüssel nötig
 | Ein Download bricht ab | Öffne das **Download-Protokoll** und prüfe die konkrete Fehlermeldung. Bei Speicherfehlern kontrolliere den freien Platz und die Schreibrechte für den Zielordner. |
 | Die Datei liegt in einem Unterordner | Prüfe unter **Einstellungen → Downloads sortieren**, ob nach Kanal, Playlist oder Format einsortiert wird. |
 
+## Lizenzen der verwendeten Komponenten
+
+NeonTube nutzt Software von Drittanbietern, darunter yt-dlp, Deno, FFmpeg und Python-Bibliotheken. Eine Übersicht mit Lizenzlinks und wichtigen Weitergabehinweisen findest du in [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt). **Diese Übersicht ersetzt nicht die vollständigen vorgeschriebenen Lizenztexte und Quellcode-Angebote.** Insbesondere für die enthaltenen FFmpeg-Binärdateien muss die Lizenzkonformität der tatsächlich verteilten Windows-ZIP gesondert überprüft werden. Die bereits veröffentlichte Portable-ZIP v1.38.1 wurde durch diese Dokumentationsänderung nicht nachträglich verändert.
+
 ## Technik und eigene Builds
 
 - **CustomTkinter** stellt die Oberfläche bereit. **yt-dlp** verarbeitet die Medienlinks, **FFmpeg** und **FFprobe** übernehmen Medienverarbeitung und Analyse. **Deno** unterstützt die JavaScript-Ausführung für die YouTube-Extraktion.
