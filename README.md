@@ -110,4 +110,3 @@ NeonTube uses third-party software, including yt-dlp, Deno, FFmpeg, and Python l
 - On a Windows build computer with Python installed, run `PORTABLE_ERSTELLEN.bat` to build your own portable ZIP. The output is saved in the `dist` folder. See [the portable build instructions](PORTABLE_START_HIER.txt) and [the Windows executable guide](WINDOWS_EXE_ANLEITUNG.txt).
 - This repository also includes a GitHub Actions workflow named **Portable Windows-Version**. Open **Actions → Portable Windows-Version → Run workflow** to build the version configured in `build_windows.py`. A matching Git tag such as `v1.38.0` can trigger the workflow too. A release is skipped if that version has already been published.
 
-**Current release: V1.38.0 — without the built-in video player.**
