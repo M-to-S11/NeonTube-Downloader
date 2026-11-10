@@ -1,4 +1,4 @@
-NeonTube Downloader V1.38.0 - WITHOUT VIDEO PLAYER
+NeonTube Downloader V1.38.0 - PORTABLE WINDOWS
 ==================================================
 
 RUN FROM SOURCE (on your computer with Python installed):
@@ -11,7 +11,7 @@ After a successful build, the output is:
   dist\NeonTubeDownloader_Portable_V1.38.0_Windows.zip
 
 Only the ZIP created in the dist folder is the ready-to-use portable
-Windows distribution. The target computer does not need Python or VLC.
+Windows distribution. The target computer does not need Python.
 The source-code archive itself does NOT include a prebuilt Windows EXE.
 
 When sharing the portable application, distribute the FULL folder
@@ -20,9 +20,6 @@ contained in the finished ZIP, not just the EXE.
 The application stores settings, your API key, favorites, and history
 in the current user's profile at:
   %APPDATA%\NeonTubeDownloader
-
-For privacy reasons, any data left over from the old video-player
-playlist feature is not automatically deleted.
 
 THIRD-PARTY LICENSES:
 Deno, FFmpeg, FFprobe, Python, and bundled Python packages are covered
