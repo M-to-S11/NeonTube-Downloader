@@ -27,7 +27,7 @@ YouTube Downloader for Windows · MP4 & MP3 · Playlists · Download Queue · yt
 
 **No Python installation required:** Download and extract the **portable Windows ZIP**, then launch `NeonTubeDownloader.exe`.
 
-**Language note:** This documentation is in English, but the current application interface is in **German**. The steps below include the original German button names so you can find them easily.
+**Language note:** The original interface language is German. The multilingual source build supports selectable interface languages; the published ZIP is the original release. The steps below include German button names for convenience.
 
 ## Interface preview
 
@@ -72,10 +72,11 @@ Open **Einstellungen → Sprache / Language** (*Settings → Language*) to choos
 
 - **German:** Original interface, fully available offline.
 - **English:** Core interface labels include an offline translation dictionary.
-- **Additional languages:** Available through the optional `deep-translator` integration using a translation service. Only predefined static interface labels are submitted, translated asynchronously, and stored in the local `ui_translations.json` cache.
+- **Offline core translations:** Common controls are included for Spanish, French, Italian, Portuguese, Turkish, Polish, Russian, Bulgarian, Dutch, Arabic and Japanese. These bundled translations do not require network access.
+- **Additional languages and missing labels:** The optional `deep-translator` integration translates predefined static interface text asynchronously and caches the results in `ui_translations_v2.json`. Translation quality and completeness vary.
 - **Offline behavior:** Cached translations remain available offline. Strings that have not been translated yet remain in German. Some dynamic messages may also remain in German.
 
-The language selector changes interface labels; it does **not** translate user content, video titles, saved file paths or download-format identifiers. The supported language list depends on the translation provider. The already published V1.38.0 Windows ZIP predates this source-code addition and does **not** contain the new selector until a new Windows build is produced.
+The language selector changes supported interface labels; it does **not** translate user content, video titles, saved file paths or download-format identifiers. The supported language list depends on the translation provider. The already published V1.38.0 Windows ZIP predates this source-code addition and does **not** contain the new selector until a new Windows build is produced.
 
 ## Features
 
