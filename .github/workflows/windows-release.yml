@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/windows-release.yml'
       - 'build_windows.py'
+      - 'app.py'
+      - 'neontube_i18n.py'
+      - 'requirements.txt'
     tags:
       - 'v*'
   workflow_dispatch:
@@ -29,6 +32,10 @@ jobs:
         with:
           python-version: '3.12'
           architecture: x64
+      - name: Check Python source files
+        run: |
+          python -m py_compile app.py neontube_i18n.py build_windows.py
+          if ($LASTEXITCODE -ne 0) { throw 'Python syntax check failed.' }
       - name: Version und Release prüfen
         id: version
         env:
@@ -44,7 +51,9 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'GitHub-Releases konnten nicht geprüft werden.' }
           "tag=$tag" >> $env:GITHUB_OUTPUT
           "version=$version" >> $env:GITHUB_OUTPUT
-          "build=$($tag -notin $releases)".ToLowerInvariant() >> $env:GITHUB_OUTPUT
+          $exists = $tag -in $releases
+          "build=true" >> $env:GITHUB_OUTPUT
+          "publish=$(-not $exists)".ToLowerInvariant() >> $env:GITHUB_OUTPUT
       - name: Portable Windows-ZIP bauen
         if: steps.version.outputs.build == 'true'
         run: |
@@ -53,8 +62,16 @@ jobs:
           ./install_deno.ps1
           ./install_ffmpeg.ps1
           python build_windows.py --mode onedir --portable-zip
-      - name: Release mit Windows-ZIP veröffentlichen
+      - name: Upload portable ZIP as a test artifact
         if: steps.version.outputs.build == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: NeonTubeDownloader-V1.38.0-Multilingual-Test
+          path: dist/NeonTubeDownloader_Portable_V1.38.0_Windows.zip
+          if-no-files-found: error
+          retention-days: 14
+      - name: Release mit Windows-ZIP veröffentlichen
+        if: steps.version.outputs.publish == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.version.outputs.tag }}
@@ -68,10 +85,10 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Release konnte nicht veröffentlicht werden.' }
           $assetNames = gh release view $env:RELEASE_TAG --json assets --jq '.assets[].name'
           if ($LASTEXITCODE -ne 0 -or $assetNames -notcontains (Split-Path -Leaf $zip)) {
-            throw 'Release-Asset konnte nicht bestätigt werden. V1.38.1 bleibt vorerst erhalten.'
+            throw 'Release asset could not be verified.'
           }
       - name: Fehlerhafte V1.38.1-Veröffentlichung nach erfolgreichem Ersatz entfernen
-        if: steps.version.outputs.build == 'true' && steps.version.outputs.version == '1.38.0'
+        if: steps.version.outputs.publish == 'true' && steps.version.outputs.version == '1.38.0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
