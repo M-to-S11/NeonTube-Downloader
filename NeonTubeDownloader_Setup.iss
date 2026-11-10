@@ -1,6 +1,6 @@
 ; Optional Inno Setup installer, after build_exe.bat created the onedir folder.
 #define AppName "NeonTube Downloader"
-#define AppVersion "1.36.0"
+#define AppVersion "1.38.0"
 #define AppExe "NeonTubeDownloader.exe"
 
 [Setup]
@@ -13,7 +13,7 @@ DefaultGroupName={#AppName}
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 OutputDir=dist\installer
-OutputBaseFilename=NeonTubeDownloader_Setup_V1_36_0
+OutputBaseFilename=NeonTubeDownloader_Setup_V1_38_0
 SetupIconFile=assets\app.ico
 UninstallDisplayIcon={app}\{#AppExe}
 Compression=lzma
