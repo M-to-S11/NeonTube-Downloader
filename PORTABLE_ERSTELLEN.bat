@@ -4,7 +4,7 @@ chcp 65001 >nul
 pushd "%~dp0"
 title NeonTube Downloader - Windows Portable ZIP erstellen
 echo ============================================================
-echo NeonTube Downloader V1.38.1 - Portable ZIP ohne Videoplayer
+echo NeonTube Downloader V1.38.0 - Portable ZIP ohne Videoplayer
 echo ============================================================
 echo.
 where py >nul 2>&1
@@ -42,11 +42,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install_ffmpeg.ps1"
 if errorlevel 1 goto failed
 if not exist ".runtime\ffmpeg\ffprobe.exe" goto missing_ffprobe
 :ffmpeg_ready
-if defined NEONTUBE_SIGN_THUMBPRINT (
-    echo Signierter Build angefordert. Zertifikat wird vor dem ZIP geprueft.
-) else (
-    echo Hinweis: Portable-ZIP ohne digitale Signatur kann durch Smart App Control blockiert werden.
-)
 %PYTHON_CMD% build_windows.py --mode onedir --portable-zip
 if errorlevel 1 goto failed
 echo.
