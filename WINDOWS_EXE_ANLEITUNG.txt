@@ -16,7 +16,7 @@ To build the portable package on your own Windows computer:
    NeonTubeDownloader\NeonTubeDownloader.exe
 
 The computer running the portable application does not require a
-separate Python installation, VLC installation, or setup wizard.
+separate Python installation or setup wizard.
 This build is intended for Windows 10/11 x64.
 
 IMPORTANT: Keep ALL files from the finished portable ZIP together.
