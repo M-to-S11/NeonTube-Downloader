@@ -66,6 +66,17 @@ The portable release targets **Windows x64**. You do not need to install Python 
 
 Only download material that you own or are authorized to save.
 
+## Interface languages
+
+Open **Einstellungen → Sprache / Language** (*Settings → Language*) to choose your preferred interface language. Your selection is saved in `%APPDATA%\NeonTubeDownloader\settings.json` and restored the next time you start the app.
+
+- **German:** Original interface, fully available offline.
+- **English:** Core interface labels include an offline translation dictionary.
+- **Additional languages:** Available through the optional `deep-translator` integration using a translation service. Only predefined static interface labels are submitted, translated asynchronously, and stored in the local `ui_translations.json` cache.
+- **Offline behavior:** Cached translations remain available offline. Strings that have not been translated yet remain in German. Some dynamic messages may also remain in German.
+
+The language selector changes interface labels; it does **not** translate user content, video titles, saved file paths or download-format identifiers. The supported language list depends on the translation provider. The already published V1.38.0 Windows ZIP predates this source-code addition and does **not** contain the new selector until a new Windows build is produced.
+
 ## Features
 
 | Feature | Description |
