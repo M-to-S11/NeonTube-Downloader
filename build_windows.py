@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent
 APP = 'NeonTubeDownloader'
 VERSION = '1.38.0'
 REQUIRED = (
-    'app.py', 'downloader.py', 'youtube_api.py', 'favorites.py',
+    'app.py', 'neontube_i18n.py', 'downloader.py', 'youtube_api.py', 'favorites.py',
     'duplicate_guard.py', 'clipboard_links.py', 'search_batch.py',
     'requirements.txt', 'THIRD_PARTY_LICENSES.txt', 'assets/app.ico', 'assets/hero_art.png',
     'assets/sidebar_art.png', 'assets/gradient_hot.png',
@@ -32,7 +32,7 @@ REQUIRED = (
 MODULES = ('app.py', 'downloader.py', 'youtube_api.py', 'favorites.py',
            'duplicate_guard.py', 'clipboard_links.py', 'search_batch.py')
 PACKAGES = ('customtkinter', 'yt_dlp', 'yt_dlp_ejs', 'PIL', 'requests',
-            'imageio_ffmpeg', 'PyInstaller')
+            'imageio_ffmpeg', 'deep_translator', 'PyInstaller')
 
 
 def validate_project():
@@ -102,6 +102,7 @@ def command_for_build(deno: Path, ffmpeg: Path, ffprobe: Path,
            '--hidden-import', 'search_batch',
            '--hidden-import', 'duplicate_guard',
            '--hidden-import', 'clipboard_links',
+           '--hidden-import', 'neontube_i18n',
            '--distpath', str(ROOT / 'dist'),
            '--workpath', str(ROOT / 'build'),
            '--specpath', str(ROOT), str(ROOT / 'app.py')]
