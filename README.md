@@ -1,15 +1,50 @@
-# NeonTube Downloader V1.38.1 – Portable Windows
+<div align="center">
 
-<img src="assets/neontube_logo.png" alt="NeonTube Downloader Logo" width="72">
+<img src="assets/neontube_logo.png" alt="NeonTube Downloader – App-Logo" width="100">
 
-NeonTube Downloader ist eine deutschsprachige Windows-App für YouTube-Videos und Audio. Du kannst Links direkt übernehmen, mehrere Downloads verwalten und häufig verwendete Einstellungen als Profil speichern.
+# NeonTube Downloader
 
-**[Portable Windows-ZIP herunterladen](https://github.com/M-to-S11/NeonTube-Downloader/releases/download/v1.38.1/NeonTubeDownloader_Portable_V1.38.1_Windows.zip)** · [Alle Releases](https://github.com/M-to-S11/NeonTube-Downloader/releases)
+**Moderner YouTube Video & Audio Downloader für Windows – deutschsprachig, portabel und mit grafischer Oberfläche.**
 
-![Designvorschau der deutschsprachigen NeonTube-Oberfläche mit Linkfeld, Formatwahl, Seitenleiste und Warteschlange](assets/neontube-design.webp)
+YouTube Downloader for Windows · MP4 & MP3 · Playlists · Download Queue · yt-dlp GUI
+
+![Version](https://img.shields.io/badge/Version-1.38.1-8A2BE2)
+![Plattform](https://img.shields.io/badge/Windows-x64-0078D4)
+![Portable](https://img.shields.io/badge/Portable-ZIP-20A45C)
+![Python](https://img.shields.io/badge/GUI-Python%20%2B%20CustomTkinter-3776AB)
+
+### [⬇️ NeonTube Downloader V1.38.1 – Portable Windows herunterladen](https://github.com/M-to-S11/NeonTube-Downloader/releases/download/v1.38.1/NeonTubeDownloader_Portable_V1.38.1_Windows.zip)
+
+[📦 Alle Versionen & Releases](https://github.com/M-to-S11/NeonTube-Downloader/releases) · [📖 Installation](#installation-und-erster-start) · [✨ Alle Funktionen](#integrierte-funktionen) · [🛠️ Hilfe](#bei-start--oder-downloadproblemen)
+
+</div>
+
+---
+
+## Was ist NeonTube Downloader?
+
+**NeonTube Downloader** ist eine Windows-Desktop-App mit einer modernen Benutzeroberfläche zum Herunterladen von Videos und Audiodateien über YouTube-Links. Unterstützt werden Einzelvideos, Playlists und mehrere parallele Downloads. Du kannst unter anderem **MP4, MP3, M4A und WAV** wählen und Downloads über eine Warteschlange verwalten.
+
+**Keine Python-Installation nötig:** Die veröffentlichte **Portable-Windows-ZIP** entpacken und `NeonTubeDownloader.exe` starten.
+
+## Einblick in die Oberfläche
+
+![Designvorschau: NeonTube Downloader mit Linkeingabe, Format-Auswahl, Seitenleiste und Download-Warteschlange](assets/neontube-design.webp)
 
 *Designvorschau des Download-Bereichs. Die Darstellung kann von der veröffentlichten Windows-Version abweichen.*
 
+## Das Wichtigste auf einen Blick
+
+- **Video & Audio:** MP4-Downloads mit Qualitätsauswahl bis 4K (soweit verfügbar), MP3, M4A und WAV.
+- **Playlists und mehrere Downloads:** Links einzeln, zeilenweise oder als Playlist übernehmen und in einer Warteschlange bearbeiten.
+- **Download-Verwaltung:** Fortschritt, Geschwindigkeit, Restzeit sowie Pausieren, Fortsetzen und Abbrechen.
+- **Komfort-Funktionen:** Linkvorschau, Verlauf, Favoriten, Speicherprofile und YouTube-Suche mit eigenem API-Schlüssel.
+- **Windows Portable:** ZIP für Windows x64; die ausführbare Datei liegt mit den nötigen Begleitdateien im entpackten Ordner.
+
+> **Hinweis:** Lade nur Inhalte herunter, für die du die Rechte oder eine entsprechende Erlaubnis besitzt. Die portable EXE ist derzeit nicht digital signiert; Windows Smart App Control kann ihren Start blockieren.
+
+---
+ 
 ## Installation und erster Start
 
 1. Lade unter **Assets** die Datei `NeonTubeDownloader_Portable_V1.38.1_Windows.zip` herunter. Die automatisch erzeugten **Source code**-Archive enthalten das Projekt zum Selberbauen.
