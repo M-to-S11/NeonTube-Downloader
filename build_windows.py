@@ -26,7 +26,7 @@ VERSION = '1.38.1'
 REQUIRED = (
     'app.py', 'downloader.py', 'youtube_api.py', 'favorites.py',
     'duplicate_guard.py', 'clipboard_links.py', 'search_batch.py',
-    'requirements.txt', 'assets/app.ico', 'assets/hero_art.png',
+    'requirements.txt', 'THIRD_PARTY_LICENSES.txt', 'assets/app.ico', 'assets/hero_art.png',
     'assets/sidebar_art.png', 'assets/gradient_hot.png',
     'assets/gradient_purple.png', 'assets/preview_mountain.png',
 )
@@ -91,6 +91,7 @@ def command_for_build(deno: Path, ffmpeg: Path, ffprobe: Path,
            '--' + mode, '--console' if console else '--windowed',
            '--name', APP, '--icon', str(ROOT / 'assets' / 'app.ico'),
            '--add-data', str(ROOT / 'assets') + os.pathsep + 'assets',
+           '--add-data', str(ROOT / 'THIRD_PARTY_LICENSES.txt') + os.pathsep + '.',
            '--add-binary', str(deno) + os.pathsep + 'deno',
            '--add-binary', str(ffmpeg) + os.pathsep + 'ffmpeg',
            '--add-binary', str(ffprobe) + os.pathsep + 'ffmpeg',
@@ -121,7 +122,7 @@ def verify_portable_dist(root: Path):
         if not path.is_file():
             raise RuntimeError('Programm-EXE fehlt: ' + str(path))
     files = list(root.rglob('*'))
-    for required in ('deno.exe', 'ffmpeg.exe', 'ffprobe.exe', 'hero_art.png',
+    for required in ('deno.exe', 'ffmpeg.exe', 'ffprobe.exe', 'THIRD_PARTY_LICENSES.txt', 'hero_art.png',
                      'app.ico'):
         if not any(p.name.lower() == required.lower() for p in files):
             raise RuntimeError('Portable Build unvollständig: ' + required)
