@@ -1,23 +1,32 @@
 NEONTUBE DOWNLOADER V1.38.0 - PORTABLE WINDOWS
-===========================================
+=============================================
 
-DIESE QUELLCODE-ZIP ENTHAELT NOCH KEINE WINDOWS-EXE.
+THIS SOURCE-CODE ARCHIVE DOES NOT CONTAIN A PREBUILT WINDOWS EXE.
 
-Portable Paket auf dem eigenen Windows-PC bauen:
+To build the portable package on your own Windows computer:
 
-1. ZIP entpacken.
-2. PORTABLE_ERSTELLEN.bat doppelklicken (Python auf diesem Bau-PC erforderlich).
-3. Warten, bis der Build endet; eventuelle Fehler im Fenster beachten.
-4. Fertige Datei: dist\NeonTubeDownloader_Portable_V1.38.0_Windows.zip
-5. Diese ZIP auf anderen PCs entpacken.
-6. NeonTubeDownloader\NeonTubeDownloader.exe starten.
+1. Extract the source-code ZIP.
+2. Double-click PORTABLE_ERSTELLEN.bat.
+   Python must be installed on the computer used for building.
+3. Let the build finish and review any errors shown in the window.
+4. The finished ZIP will be saved as:
+   dist\NeonTubeDownloader_Portable_V1.38.0_Windows.zip
+5. Extract that ZIP on the computer where you want to use the app.
+6. Start:
+   NeonTubeDownloader\NeonTubeDownloader.exe
 
-Auf dem anderen PC kein Python, keine VLC-Laufzeit und kein Installer noetig.
-Windows 10/11 x64 wird vorausgesetzt.
+The computer running the portable application does not require a
+separate Python installation, VLC installation, or setup wizard.
+This build is intended for Windows 10/11 x64.
 
-ACHTUNG: Der ganze Inhalt der fertigen ZIP gehoert zusammen.
-Einzelne EXE aus dem Ordner herauskopieren reicht NICHT.
+IMPORTANT: Keep ALL files from the finished portable ZIP together.
+Copying only the EXE out of its folder is not sufficient.
 
-Gespeicherte Einstellungen bleiben unter %%APPDATA%%\NeonTubeDownloader.
-Eine unsignierte EXE kann von Windows Smart App Control gesperrt werden.
-Nur Inhalte herunterladen, fuer die du die Rechte hast.
+Settings and history are stored at:
+  %APPDATA%\NeonTubeDownloader
+
+Because the EXE is unsigned, Windows Smart App Control may block it.
+Do not bypass Windows security protections without assessing the risk.
+
+Only download content when you have the necessary rights or permission.
+See THIRD_PARTY_LICENSES.txt for third-party redistribution notes.
