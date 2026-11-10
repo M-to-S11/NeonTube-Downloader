@@ -39,7 +39,7 @@ from youtube_api import (YouTubeAPIError, get_video_metadata, search_videos,
                          read_api_key, write_api_key, video_id_from_url)
 
 APP_NAME = "NeonTube Downloader"
-VERSION = "1.38.1"
+VERSION = "1.38.0"
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 ASSETS = ROOT / "assets"
 DATA = (Path(os.getenv("APPDATA", Path.home())) / "NeonTubeDownloader")
