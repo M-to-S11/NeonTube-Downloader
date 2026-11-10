@@ -1,0 +1,8 @@
+NeonTube Downloader V1.38.1 – signierfähiger Portable-Builder
+
+- Keine Änderung am visuellen Design und den Downloadfunktionen.
+- Offizielle Authenticode-Code-Signatur optional im Windows-Build.
+- SignTool prüft alle EXE/DLL/PYD-Dateien vor dem Verteilen.
+- Vertrauenswürdige Fremdsignaturen werden erhalten.
+- Build stoppt bei fehlender oder ungültiger Signatur.
+- Kein Smart-App-Control-Bypass; gültiges Code-Signing-Zertifikat erforderlich.

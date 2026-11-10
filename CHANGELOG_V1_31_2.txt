@@ -1,0 +1,7 @@
+NeonTube Downloader V1.31.2 – vollständige Logo-Korrektur
+
+- Komplettes Hero-Banner ohne verbleibendes rotes YouTube-Symbol neu erstellt.
+- Eigenes blau-türkises Icon sauber in das Neon-Wellenmotiv integriert.
+- Header/Über-Fenster, Windows-Icon und Installer-Symbol sind einheitlich.
+- make_assets.py überschreibt die eigenen Branding-Grafiken nicht mehr.
+- Ansonsten Funktionsumfang von Version 1.31.1 unverändert.

@@ -1,0 +1,9 @@
+NeonTube Downloader V1.36.0 – Automatische Ordnerverwaltung
+
+- Option in den bestehenden Einstellungen: Keine / Nach Kanal / Nach Playlist / Nach Dateiformat.
+- Sichere yt-dlp-Ausgabevorlagen: kein nachträgliches Verschieben, Teil-Downloads bleiben fortsetzbar.
+- Option wird pro Warteschlangen-Auftrag gespeichert; vorhandene Aufträge und Dateien bleiben unverändert.
+- Bei fehlendem Playlistnamen Einzelvideos als Ordner verwenden.
+- Verlauf und Warteschlange öffnen den tatsächlichen Datei-Unterordner, wenn verfügbar.
+- Duplikatschutz prüft zusätzlich eine Ebene von automatisch angelegten Unterordnern.
+- Alle Grafikdateien und das Neon-Layout bleiben unverändert.

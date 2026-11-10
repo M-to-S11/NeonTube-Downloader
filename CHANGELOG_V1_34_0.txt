@@ -1,0 +1,9 @@
+NeonTube Downloader V1.34.0 – Doppelte Downloads erkennen
+
+- Doppelte Video-IDs und identische Playlist-Links in der laufenden Warteschlange erkennen.
+- Bereits gespeicherte Dateien anhand Verlauf, Pfad und Dateiendung prüfen.
+- Einmalige Bestätigungsfrage, falls ein bereits heruntergeladenes Video erneut eingereiht werden soll.
+- Gelöschte Dateien, fehlgeschlagene und abgebrochene Downloads blockieren nicht.
+- Unterstützung für einzelne Videos, Links, Favoriten und Mehrfachauswahl.
+- MP4- und verschiedene Audioformate getrennt prüfen.
+- Bestehendes Design, Icons, Banner, Reparaturfunktion und API unverändert.

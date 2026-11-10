@@ -1,0 +1,29 @@
+NeonTube Downloader V1.38.1 - Smart App Control und Code-Signierung
+=========================================================================
+
+Microsoft Smart App Control hat KEINE programmspezifische Ausnahmeliste.
+Es existiert keine zuverlaessige Umgehung im App-Code.
+
+OFFIZIELLER WEG:
+1. Gueltiges Code-Signing-Zertifikat von einem anerkannten Anbieter beziehen
+   (alternativ Microsoft Artifact Signing, wenn dafuer berechtigt).
+2. Zertifikat in Windows installieren. Den SHA1-Fingerabdruck im
+   Zertifikatsspeicher herausfinden (certmgr.msc -> Eigene Zertifikate).
+3. Microsoft Windows SDK mit SignTool installieren.
+4. PORTABLE_SIGNIERT_ERSTELLEN.bat starten und Fingerabdruck eingeben.
+   Der Builder signiert die noch nicht vertrauenswuerdig signierten Windows-
+   Binärdateien (EXE, DLL, PYD) und prueft alle Signaturen, bevor die ZIP
+   erstellt wird. Bei fehlender oder ungueltiger Signatur wird abgebrochen.
+5. Die fertige ZIP aus dist auf einem Windows 11 PC testen.
+
+Ohne vorhandenes anerkanntes Zertifikat kann das Paket NICHT signiert
+werden. Das ZIP aus PORTABLE_ERSTELLEN.bat ist standardmaessig unsigniert
+und kann unter Smart App Control weiterhin blockiert werden.
+
+Ein selbstsigniertes Zertifikat ist fuer andere Windows-PCs KEINE
+vertrauenswuerdige Signatur. Kein Zertifikat/privater Schluessel wird
+in der ZIP gespeichert. Kein Schutzmechanismus wird deaktiviert.
+
+Dokumentation:
+https://support.microsoft.com/de-de/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions
+https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/code-signing-for-smart-app-control

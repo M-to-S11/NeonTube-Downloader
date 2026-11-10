@@ -1,0 +1,7 @@
+NeonTube Downloader V1.28.8 – Automatisches Log-Scrollen
+- Neue Log-Einträge erscheinen oben und bleiben sichtbar, wenn Auto-Scroll aktiv ist.
+- Manuelles Scrollen zu älteren Meldungen pausiert die Automatik.
+- Bei neuen Meldungen bleibt die Leseposition in der manuellen Ansicht stabil.
+- Zurück zum Listenanfang aktiviert Auto-Scroll wieder.
+- Kompakter Status "Auto-Scroll aktiv/pausiert" in der Log-Leiste.
+- Nur app.py und Versions-/Build-Metadaten angepasst; downloader.py unverändert.

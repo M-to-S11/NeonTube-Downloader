@@ -1,0 +1,6 @@
+NeonTube Downloader V1.35.1 – Fehlerbehebung Videovorschau
+
+- ValueError in _refresh_preview behoben: Statistikwerte der YouTube-API sind Zeichenketten.
+- Aufrufzahlen werden für String und Integer sicher formatiert (z. B. 12.345 Aufrufe).
+- Fehlende/ungültige Aufrufzahlen werden ohne Tkinter-Fehler behandelt.
+- Keine Änderungen an Layout, Grafiken, Download-Engine, Favoriten oder Zwischenablage-Erkennung.

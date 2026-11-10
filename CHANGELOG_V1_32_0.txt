@@ -1,0 +1,13 @@
+NeonTube Downloader V1.32.0 – Intelligente Download-Reparatur
+
+- Begrenzt auf 3 vollständige Versuche; yt-dlp versucht Einzelverbindungen/Fragmente separat erneut.
+- Automatische Wiederholung ausschließlich bei typischen temporären Netzproblemen (z. B. Timeout, Reset, Bad Record MAC, HTTP 5xx).
+- 2 / 5 Sekunden gestaffelte Wartezeit bei erneuten Verbindungsversuchen.
+- Während der Wiederholung wird auf eine parallele Fragmentverbindung reduziert.
+- Teil-Downloads (.part) bleiben erhalten; yt-dlp setzt sie fort, soweit Server/Format dies unterstützen.
+- Kein automatisches Wiederholen bei 401/403/404/429, Privatvideos, fehlenden Rechten, beschädigter Zertifikatsprüfung oder lokalen Festplattenproblemen.
+- Reparaturstatus und Countdown im bestehenden Warteschlangenstatus/Restzeitfeld; Log meldet Versuche.
+- Pausieren, Abbrechen und Schließen sind auch während der Wartezeit möglich.
+- Oberfläche, Logo, Hero-Banner, Navigation und Fensterlayout unverändert.
+
+Hinweis: Netzwerk- oder YouTube-Sperren können nicht garantiert behoben werden. Download-Abbrüche während FFmpeg-Verarbeitung werden nicht automatisch neu begonnen.

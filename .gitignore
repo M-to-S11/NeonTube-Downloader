@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.runtime/
+build/
+dist/
+youtube_api_key.dat
+.env

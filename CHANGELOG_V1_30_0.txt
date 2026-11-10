@@ -1,0 +1,11 @@
+NeonTube Downloader V1.30.0 – Suchoberfläche optimiert
+
+- Suchresultate mit großen 16:9-Vorschaubildern und besser lesbaren Titeln
+- Suchkarten in responsivem Raster mit 1, 2 oder 3 Spalten
+- Trefferanzahl pro Aufruf wählbar: 6 / 12 / 24
+- Vollständiger Titel bei Mouseover
+- Titel und Kanalnamen aus der API mit korrekt dekodierten HTML-Sonderzeichen
+- Nachladen der Thumbnails der vorherigen Ergebnisse auch bei Paginierung
+- Suchaktion „Starten“ an die bestehende Download-Warteschlange angebunden
+- Automatisierte API-, Engine- und UI-Dispatch-Tests; Windows-Test weiterhin erforderlich
+- Ursprüngliche GUI und vorhandene Konfiguration bleiben erhalten

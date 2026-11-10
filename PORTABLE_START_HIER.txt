@@ -1,0 +1,31 @@
+NeonTube Downloader V1.38.1 - ohne Videoplayer
+=============================================
+
+QUELLCODE STARTEN (auf deinem PC mit installiertem Python):
+  start_windows.bat
+
+FERTIGE PORTABLE WINDOWS-ZIP ERSTELLEN (auf deinem Windows-PC mit Python):
+  PORTABLE_ERSTELLEN.bat
+
+Nach erfolgreichem Build:
+  dist\NeonTubeDownloader_Portable_V1.38.1_Windows.zip
+
+Nur die ZIP aus dem dist-Ordner ist eine portable Windows-Ausgabe,
+auf deren Ziel-PC weder Python noch VLC installiert werden muss.
+In der hier gelieferten Quellcode-ZIP ist noch keine fertig kompilierte EXE.
+
+Nur den ganzen Ordner aus der fertigen Portable-ZIP verteilen.
+
+Das Programm speichert Einstellungen, API-Schluessel, Favoriten und Verlauf
+wie bisher im Benutzerprofil unter %APPDATA%\NeonTubeDownloader.
+Die alte Player-Playlists-Datei bleibt aus Datenschutzgruenden unangetastet.
+
+Hinweis beim Weitergeben: Deno, FFmpeg, FFprobe sowie Python-Pakete
+haben eigene Lizenzbedingungen. Pruefe die Lizenzhinweise der
+Originalprojekte (https://deno.com, https://ffmpeg.org, https://www.python.org)
+und stelle bei Weitergabe die geforderten Lizenztexte/Quellcodes bereit.
+
+SMART APP CONTROL / SIGNIEREN:
+  SMART_APP_CONTROL_ANLEITUNG.txt lesen.
+  Mit echtem Code-Signing-Zertifikat: PORTABLE_SIGNIERT_ERSTELLEN.bat.
+  Ohne gueltige Signatur kann Smart App Control die EXE blockieren.

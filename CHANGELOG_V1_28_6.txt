@@ -1,0 +1,26 @@
+NeonTube Downloader V1.28.6 – integriertes Download-Protokoll
+
+NEU
+- „Log“ zeigt die Protokollseite direkt im Hauptfenster.
+- Live-Status aus dem unveränderten DownloadManager (Start, Download, Verarbeitung, Erfolg, Warnungen, Fehler).
+- Fortschritt wird in 10-%-Schritten protokolliert.
+- Filter: Alle Ereignisse / Downloads / Fehler.
+- Kopieren, Speichern (.txt, UTF-8), Leeren mit Sicherheitsabfrage.
+- Zurück zum Download.
+- Keine automatische Speicherung von Protokollen. Maximal 500 Ereignisse pro Sitzung.
+- Keine Voll-URLs/Cookies absichtlich im Log.
+
+UNVERÄNDERT
+- downloader.py (exakt dieselbe Datei wie V1.28.5)
+- Kompakte Schaltflächen, Design, Queue, Verlauf, Profile, integrierte Einstellungen
+- Kein Zahnrad oben rechts, keine Profilkarte unten rechts, keine Update-Funktionen
+
+INSTALLATION
+- Python-Version: app.py im vorhandenen Projekt ersetzen.
+- Für Windows-EXE: dieses vollständige Projekt entpacken, build_exe.bat und dann
+  optional build_setup.bat starten; Installer in dist\\installer.
+- Bisherige Version zuvor sichern.
+
+TEST
+- Automatische Tests und Build-Quellprüfung erfolgreich.
+- Ein vollständiger realer Windows-GUI-/Download-Test bleibt erforderlich.

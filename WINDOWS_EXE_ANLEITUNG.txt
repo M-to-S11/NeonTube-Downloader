@@ -1,0 +1,23 @@
+NEONTUBE DOWNLOADER V1.38.0 - PORTABLE WINDOWS
+===========================================
+
+DIESE QUELLCODE-ZIP ENTHAELT NOCH KEINE WINDOWS-EXE.
+
+Portable Paket auf dem eigenen Windows-PC bauen:
+
+1. ZIP entpacken.
+2. PORTABLE_ERSTELLEN.bat doppelklicken (Python auf diesem Bau-PC erforderlich).
+3. Warten, bis der Build endet; eventuelle Fehler im Fenster beachten.
+4. Fertige Datei: dist\NeonTubeDownloader_Portable_V1.38.0_Windows.zip
+5. Diese ZIP auf anderen PCs entpacken.
+6. NeonTubeDownloader\NeonTubeDownloader.exe starten.
+
+Auf dem anderen PC kein Python, keine VLC-Laufzeit und kein Installer noetig.
+Windows 10/11 x64 wird vorausgesetzt.
+
+ACHTUNG: Der ganze Inhalt der fertigen ZIP gehoert zusammen.
+Einzelne EXE aus dem Ordner herauskopieren reicht NICHT.
+
+Gespeicherte Einstellungen bleiben unter %%APPDATA%%\NeonTubeDownloader.
+Eine unsignierte EXE kann von Windows Smart App Control gesperrt werden.
+Nur Inhalte herunterladen, fuer die du die Rechte hast.

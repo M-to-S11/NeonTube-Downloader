@@ -1,0 +1,8 @@
+NeonTube Downloader V1.33.0 – Mehrfachauswahl in der YouTube-Suche
+
+- Videokarten mit Auswahlkästchen unter dem Favoriten-Herz.
+- „Alle auswählen“, „Auswahl aufheben“, „Zur Warteschlange (N)“.
+- Auswahl bleibt beim Laden weiterer Treffer erhalten.
+- Mehrere ausgewählte Videos werden über den bisherigen Downloadpfad in die Warteschlange übernommen.
+- Neue Suche löscht die alte Auswahl. Doppelte Videos werden nicht mehrfach eingereiht.
+- Alle bisherigen Designbilder unverändert; Download-Reparatur bleibt aktiv.
