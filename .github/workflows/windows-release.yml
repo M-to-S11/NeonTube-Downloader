@@ -8,6 +8,7 @@ on:
       - 'build_windows.py'
       - 'app.py'
       - 'neontube_i18n.py'
+      - 'neontube_locale_packs.py'
       - 'requirements.txt'
     tags:
       - 'v*'
@@ -34,8 +35,10 @@ jobs:
           architecture: x64
       - name: Check Python source files
         run: |
-          python -m py_compile app.py neontube_i18n.py build_windows.py
+          python -m py_compile app.py neontube_i18n.py neontube_locale_packs.py build_windows.py
           if ($LASTEXITCODE -ne 0) { throw 'Python syntax check failed.' }
+          python -c "from neontube_i18n import LanguageManager; from neontube_locale_packs import CORE_TRANSLATIONS, CORE_KEYS; from tempfile import TemporaryDirectory; from pathlib import Path; assert all(set(CORE_KEYS)==set(t) for t in CORE_TRANSLATIONS.values()); t=TemporaryDirectory(); m=LanguageManager(Path(t.name),'es'); assert m.translate('Einstellungen')=='Configuración'; assert m.set_language('fr') and m.translate('Download starten')=='Démarrer le téléchargement'; assert m.set_language('en') and m.translate('Suchen')=='Search'; assert m.set_language('de') and m.translate('Suchen')=='Suchen'; t.cleanup()"
+          if ($LASTEXITCODE -ne 0) { throw 'Translation smoke test failed.' }
       - name: Version und Release prüfen
         id: version
         env:
