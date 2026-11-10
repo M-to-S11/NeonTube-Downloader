@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Windows portable EXE/ZIP builder for NeonTube Downloader V1.38.1.
+"""Windows portable EXE/ZIP builder for NeonTube Downloader V1.38.0.
 
 The builder is intentionally Windows-only. The built onedir ZIP requires
 neither Python nor VLC on the recipient computer.
@@ -16,13 +16,12 @@ import subprocess
 import sys
 import zipfile
 
-from sign_release import normalize_thumbprint, sign_portable
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 APP = 'NeonTubeDownloader'
-VERSION = '1.38.1'
+VERSION = '1.38.0'
 REQUIRED = (
     'app.py', 'downloader.py', 'youtube_api.py', 'favorites.py',
     'duplicate_guard.py', 'clipboard_links.py', 'search_batch.py',
@@ -152,8 +151,6 @@ def main(argv=None):
     parser.add_argument('--check-only', action='store_true')
     parser.add_argument('--portable-zip', action='store_true',
                         help='Erstellt nach onedir eine fertige Portable-Windows-ZIP')
-    parser.add_argument('--sign-thumbprint', default=os.getenv('NEONTUBE_SIGN_THUMBPRINT', ''),
-                        help='Gültigen Code-Signing-Zertifikat-Fingerabdruck (Windows Store) verwenden')
     args = parser.parse_args(argv)
     validate_project()
     if args.check_only:
@@ -163,10 +160,6 @@ def main(argv=None):
         raise RuntimeError('Eine Windows-EXE muss mit Windows-Python unter Windows gebaut werden.')
     if args.portable_zip and args.mode != 'onedir':
         raise ValueError('Portable-ZIP erfordert den Modus onedir.')
-    if args.sign_thumbprint and args.mode != 'onedir':
-        raise ValueError('Die Signierung ist für onedir vorgesehen.')
-    if args.sign_thumbprint:
-        args.sign_thumbprint = normalize_thumbprint(args.sign_thumbprint)
     ensure_dependencies()
     deno = find_deno()
     ff_pair = find_ffmpeg_pair()
@@ -184,19 +177,12 @@ def main(argv=None):
         raise RuntimeError('PyInstaller hat keine EXE erstellt.')
     if args.mode == 'onedir':
         verify_portable_dist(dist / APP)
-    signing_stats = None
-    if args.sign_thumbprint:
-        print('Prüfe und signiere Windows-Binärdateien mit SignTool ...', flush=True)
-        signing_stats = sign_portable(dist / APP, args.sign_thumbprint)
-        print(f'Signierung abgeschlossen: {signing_stats["newly_signed"]} neu, '
-              f'{signing_stats["already_trusted"]} bereits vertrauenswürdig.')
     digest = hashlib.sha256(exe.read_bytes()).hexdigest()
     report = (f'NeonTube Downloader V{VERSION} Windows Build\n'
               f'Erstellt UTC: {datetime.now(timezone.utc).isoformat()}\n'
               f'Python: {sys.version.split()[0]}\n'
               f'Windows: {platform.platform()}\n'
               f'SHA-256 der EXE: {digest}\n'
-              f'Code-Signierung: {"Authenticode verifiziert" if signing_stats else "Nicht signiert"}\n'
               'EXE-Test auf einem Windows-Zielgerät empfohlen.\n')
     (dist / 'BUILD_REPORT.txt').write_text(report, encoding='utf-8')
     print('Erstellt:', exe)
