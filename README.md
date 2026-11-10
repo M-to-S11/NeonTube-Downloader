@@ -8,12 +8,12 @@
 
 YouTube Downloader for Windows · MP4 & MP3 · Playlists · Download Queue · yt-dlp GUI
 
-![Version](https://img.shields.io/badge/Version-1.38.1-8A2BE2)
+![Version](https://img.shields.io/badge/Version-1.38.0-8A2BE2)
 ![Plattform](https://img.shields.io/badge/Windows-x64-0078D4)
 ![Portable](https://img.shields.io/badge/Portable-ZIP-20A45C)
 ![Python](https://img.shields.io/badge/GUI-Python%20%2B%20CustomTkinter-3776AB)
 
-### [⬇️ NeonTube Downloader V1.38.1 – Portable Windows herunterladen](https://github.com/M-to-S11/NeonTube-Downloader/releases/download/v1.38.1/NeonTubeDownloader_Portable_V1.38.1_Windows.zip)
+### [⬇️ NeonTube Downloader V1.38.0 – Portable Windows herunterladen](https://github.com/M-to-S11/NeonTube-Downloader/releases/download/v1.38.0/NeonTubeDownloader_Portable_V1.38.0_Windows.zip)
 
 [📦 Alle Versionen & Releases](https://github.com/M-to-S11/NeonTube-Downloader/releases) · [📖 Installation](#installation-und-erster-start) · [✨ Alle Funktionen](#integrierte-funktionen) · [🛠️ Hilfe](#bei-start--oder-downloadproblemen)
 
@@ -47,7 +47,7 @@ YouTube Downloader for Windows · MP4 & MP3 · Playlists · Download Queue · yt
  
 ## Installation und erster Start
 
-1. Lade unter **Assets** die Datei `NeonTubeDownloader_Portable_V1.38.1_Windows.zip` herunter. Die automatisch erzeugten **Source code**-Archive enthalten das Projekt zum Selberbauen.
+1. Lade unter **Assets** die Datei `NeonTubeDownloader_Portable_V1.38.0_Windows.zip` herunter. Die automatisch erzeugten **Source code**-Archive enthalten das Projekt zum Selberbauen.
 2. Klicke in Windows mit der rechten Maustaste auf die ZIP und wähle **Alle extrahieren**.
 3. Öffne den entpackten Ordner `NeonTubeDownloader` und starte `NeonTubeDownloader.exe`. Lasse den Ordner `_internal` neben der EXE.
 4. Öffne in der Seitenleiste **Download**. Unter **Speicherort → Durchsuchen** legst du fest, wo deine Dateien gespeichert werden.
@@ -97,10 +97,10 @@ Für Downloads über einen bekannten YouTube-Link ist kein API-Schlüssel nötig
 
 ## Lizenzen der verwendeten Komponenten
 
-NeonTube nutzt Software von Drittanbietern, darunter yt-dlp, Deno, FFmpeg und Python-Bibliotheken. Eine Übersicht mit Lizenzlinks und wichtigen Weitergabehinweisen findest du in [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt). **Diese Übersicht ersetzt nicht die vollständigen vorgeschriebenen Lizenztexte und Quellcode-Angebote.** Insbesondere für die enthaltenen FFmpeg-Binärdateien muss die Lizenzkonformität der tatsächlich verteilten Windows-ZIP gesondert überprüft werden. Die bereits veröffentlichte Portable-ZIP v1.38.1 wurde durch diese Dokumentationsänderung nicht nachträglich verändert.
+NeonTube nutzt Software von Drittanbietern, darunter yt-dlp, Deno, FFmpeg und Python-Bibliotheken. Eine Übersicht mit Lizenzlinks und wichtigen Weitergabehinweisen findest du in [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt). **Diese Übersicht ersetzt nicht die vollständigen vorgeschriebenen Lizenztexte und Quellcode-Angebote.** Insbesondere für die enthaltenen FFmpeg-Binärdateien muss die Lizenzkonformität der tatsächlich verteilten Windows-ZIP gesondert überprüft werden. Für die tatsächlich verteilte Windows-ZIP müssen die Lizenzpflichten der enthaltenen Dateien gesondert geprüft werden.
 
 ## Technik und eigene Builds
 
 - **CustomTkinter** stellt die Oberfläche bereit. **yt-dlp** verarbeitet die Medienlinks, **FFmpeg** und **FFprobe** übernehmen Medienverarbeitung und Analyse. **Deno** unterstützt die JavaScript-Ausführung für die YouTube-Extraktion.
 - Für einen eigenen Windows-Build mit installiertem Python führe `PORTABLE_ERSTELLEN.bat` aus. Die fertige ZIP landet im Ordner `dist`.
-- Im Repository baut **Actions → Portable Windows-Version → Run workflow** die in `build_windows.py` hinterlegte Version. Ein passender Git-Tag wie `v1.38.1` startet den Workflow ebenfalls. Bereits veröffentlichte Versionen werden übersprungen.
+- Im Repository baut **Actions → Portable Windows-Version → Run workflow** die in `build_windows.py` hinterlegte Version. Ein passender Git-Tag wie `v1.38.0` startet den Workflow ebenfalls. Bereits veröffentlichte Versionen werden übersprungen.
