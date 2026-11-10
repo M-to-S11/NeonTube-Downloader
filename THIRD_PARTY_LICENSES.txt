@@ -1,0 +1,105 @@
+NEONTUBE DOWNLOADER – HINWEISE ZU DRITTANBIETER-SOFTWARE
+=======================================================
+Stand: 10. November 2026
+Projekt: https://github.com/M-to-S11/NeonTube-Downloader
+
+NeonTube Downloader verwendet Bibliotheken und Programme anderer Anbieter.
+Diese besitzen eigene Lizenzen. Diese Datei vergibt KEINE Lizenz für
+den selbst entwickelten NeonTube-Quellcode und ersetzt auch keine
+vollständige Lizenzprüfung der jeweils verteilten Binärdateien.
+
+WICHTIGE DIREKT VERWENDETE KOMPONENTEN
+---------------------------------------
+
+1. yt-dlp – Unlicense
+   Projekt: https://github.com/yt-dlp/yt-dlp
+   Lizenz: https://github.com/yt-dlp/yt-dlp/blob/master/LICENSE
+   Die über PyPI bezogene yt-dlp-Wheel steht laut Projekt unter der
+   Unlicense. Die separat angebotenen yt-dlp-PyInstaller-EXEs können
+   zusätzliche GPLv3+-Komponenten enthalten; diese EXEs werden im
+   aktuellen NeonTube-Buildskript nicht direkt eingebunden.
+
+2. yt-dlp-ejs – Unlicense; in vorgefertigten Wheels auch MIT und ISC
+   Projekt: https://github.com/yt-dlp/ejs
+   Lizenzangaben: https://github.com/yt-dlp/ejs/blob/main/README.md
+   Enthaltene JS-Bestandteile können von astring (MIT) und
+   meriyah (ISC) stammen; Lizenztexte des tatsächlich verwendeten
+   Wheel-Artefakts beachten.
+
+3. FFmpeg und FFprobe – GPLv3 (verwendeter Windows-Build)
+   Allgemeine Projektinformationen: https://ffmpeg.org/legal.html
+   Bezugsquelle des Buildskripts:
+   https://www.gyan.dev/ffmpeg/builds/
+   Das Buildskript lädt ffmpeg-release-essentials.zip von Gyan.dev.
+   Der Anbieter bezeichnet seine statischen Windows-Builds als GPLv3.
+   Bei Verteilung sind die vollständigen GPL-Lizenztexte, Hinweise
+   auf weitere im FFmpeg-Build enthaltene Komponenten und der
+   entsprechende Quellcode nach den anwendbaren Lizenzbedingungen
+   bereitzustellen. Ein bloßer Link in dieser Datei reicht dafür
+   nicht zwangsläufig aus. Version/Buildkonfiguration dokumentieren.
+
+4. Deno – MIT
+   Projekt und Lizenz: https://github.com/denoland/deno
+   Die offizielle deno.exe wird vom Buildskript heruntergeladen.
+   Die urheberrechtlichen Hinweise und Lizenztexte des verwendeten
+   Deno-Releases (einschließlich enthaltenen Drittanbieter-Codes)
+   müssen bei Weitergabe berücksichtigt werden.
+
+5. CustomTkinter – MIT
+   Projekt: https://github.com/TomSchimansky/CustomTkinter
+   Lizenz: https://github.com/TomSchimansky/CustomTkinter/blob/master/LICENSE
+
+6. Pillow – MIT-CMU (historisch auch als HPND bezeichnet)
+   Projekt: https://github.com/python-pillow/Pillow
+   Lizenz: https://github.com/python-pillow/Pillow/blob/main/LICENSE
+
+7. Requests – Apache License 2.0
+   Projekt: https://github.com/psf/requests
+   Lizenz: https://github.com/psf/requests/blob/main/LICENSE
+
+8. imageio-ffmpeg – BSD-2-Clause
+   Projekt: https://github.com/imageio/imageio-ffmpeg
+   Lizenz: https://github.com/imageio/imageio-ffmpeg/blob/main/LICENSE
+   Achtung: Windows-Wheels dieser Bibliothek können außerdem eine
+   separate FFmpeg-Binärdatei mit eigenen Lizenzpflichten enthalten.
+
+9. Python-Laufzeit – Python Software Foundation License
+   Projekt: https://www.python.org/
+   Lizenz: https://docs.python.org/3/license.html
+   Eine mit PyInstaller gebündelte Windows-App enthält normalerweise
+   Bestandteile der Python-Laufzeit.
+
+10. PyInstaller – GPL mit besonderer Ausnahme für gebündelte Apps
+    Projekt: https://pyinstaller.org/
+    Hinweise: https://pyinstaller.org/en/stable/license.html
+    Die PyInstaller-Ausnahme erlaubt unter Bedingungen die Verteilung
+    von Apps unter einer eigenen Lizenz. Die Lizenzen der übrigen
+    enthaltenen Komponenten gelten trotzdem.
+
+WEITERE PFLICHTEN VOR DER NÄCHSTEN VERÖFFENTLICHUNG
+----------------------------------------------------
+* Exakte Paketversionen und tatsächlich enthaltene Dateien der
+  Portable-ZIP inventarisieren, einschließlich transitiver
+  Python-Abhängigkeiten (z. B. certifi, urllib3, idna usw.).
+* Die vollständigen anwendbaren Lizenz- und Copyright-Texte der
+  enthaltenen Komponenten zusammen mit der ZIP ausliefern.
+* Für GPL-abgedeckte FFmpeg-Binärdateien den korrespondierenden
+  Quellcode in lizenzkonformer Form verfügbar machen; dazu müssen
+  konkrete Versions-/Buildinformationen gesichert werden.
+* Die Lizenzinformationen der tatsächlich ausgelieferten Deno-
+  und FFmpeg-Releases sowie möglicher weiterer Binärdateien
+  gesondert prüfen.
+* Abhängigkeiten sind in requirements.txt größtenteils nur mit
+  Mindestversionen angegeben. Die genauen Versionen können sich
+  zwischen zwei Builds unterscheiden.
+
+HINWEIS ZUR SCHON VERÖFFENTLICHTEN V1.38.1
+-------------------------------------------
+Der bereits veröffentlichte Release wurde erstellt, bevor diese
+Dokumentation ergänzt wurde. Die Datei im Repository bedeutet NICHT,
+dass sie oder alle notwendigen Lizenztexte automatisch in der schon
+hochgeladenen v1.38.1-Portable-ZIP enthalten sind. Das Buildskript
+wird für künftige Builds angepasst. Eine neue ZIP muss separat
+erstellt und veröffentlicht werden.
+
+Diese Übersicht ist keine abschließende rechtliche Bewertung.
