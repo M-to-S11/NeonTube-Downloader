@@ -1,30 +1,36 @@
-NeonTube Downloader V1.38.0 - ohne Videoplayer
-=============================================
+NeonTube Downloader V1.38.0 - WITHOUT VIDEO PLAYER
+==================================================
 
-QUELLCODE STARTEN (auf deinem PC mit installiertem Python):
+RUN FROM SOURCE (on your computer with Python installed):
   start_windows.bat
 
-FERTIGE PORTABLE WINDOWS-ZIP ERSTELLEN (auf deinem Windows-PC mit Python):
+CREATE A PORTABLE WINDOWS ZIP (on a Windows build computer with Python):
   PORTABLE_ERSTELLEN.bat
 
-Nach erfolgreichem Build:
+After a successful build, the output is:
   dist\NeonTubeDownloader_Portable_V1.38.0_Windows.zip
 
-Nur die ZIP aus dem dist-Ordner ist eine portable Windows-Ausgabe,
-auf deren Ziel-PC weder Python noch VLC installiert werden muss.
-In der hier gelieferten Quellcode-ZIP ist noch keine fertig kompilierte EXE.
+Only the ZIP created in the dist folder is the ready-to-use portable
+Windows distribution. The target computer does not need Python or VLC.
+The source-code archive itself does NOT include a prebuilt Windows EXE.
 
-Nur den ganzen Ordner aus der fertigen Portable-ZIP verteilen.
+When sharing the portable application, distribute the FULL folder
+contained in the finished ZIP, not just the EXE.
 
-Das Programm speichert Einstellungen, API-Schluessel, Favoriten und Verlauf
-wie bisher im Benutzerprofil unter %APPDATA%\NeonTubeDownloader.
-Die alte Player-Playlists-Datei bleibt aus Datenschutzgruenden unangetastet.
+The application stores settings, your API key, favorites, and history
+in the current user's profile at:
+  %APPDATA%\NeonTubeDownloader
 
-Hinweis beim Weitergeben: Deno, FFmpeg, FFprobe sowie Python-Pakete
-haben eigene Lizenzbedingungen. Pruefe die Lizenzhinweise der
-Originalprojekte (https://deno.com, https://ffmpeg.org, https://www.python.org)
-und stelle bei Weitergabe die geforderten Lizenztexte/Quellcodes bereit.
+For privacy reasons, any data left over from the old video-player
+playlist feature is not automatically deleted.
 
-SMART APP CONTROL / SIGNIEREN:
-  Auf Windows kann eine unsignierte EXE durch Smart App Control blockiert werden.
-  Ohne gueltige Signatur kann Smart App Control die EXE blockieren.
+THIRD-PARTY LICENSES:
+Deno, FFmpeg, FFprobe, Python, and bundled Python packages are covered
+by their respective licenses. Review the upstream license requirements
+(https://deno.com, https://ffmpeg.org, https://www.python.org).
+Provide the required license notices and source-code access when
+distributing the application. See THIRD_PARTY_LICENSES.txt for details.
+
+WINDOWS SMART APP CONTROL:
+The portable EXE is not digitally signed. Windows Smart App Control
+may block it. Do not disable security features simply to bypass a warning.
