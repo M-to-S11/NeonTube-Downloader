@@ -1,8 +1,0 @@
-NeonTube Downloader V1.28.7 – Log-Feinschliff
-
-- Kompakte Log-Karten mit geringeren Abständen und Höhe.
-- Während eines Downloads wird eine bestehende Fortschrittskarte aktualisiert, anstatt neue Karten für jeden 10-%-Schritt anzulegen.
-- Lange Meldungen werden passend zur Fensterbreite gekürzt; vollständiger Text beim Darüberfahren und in Kopie/Export.
-- Zeichensichere Icons mit festen Farben für INFO, DOWNLOAD, ERFOLG, WARNUNG und FEHLER.
-- Die bestehende Download-Engine downloader.py bleibt unverändert.
-- Kein Update-Assistent und keine automatische Updatefunktion.

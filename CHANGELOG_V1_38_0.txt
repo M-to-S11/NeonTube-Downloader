@@ -1,8 +1,0 @@
-NeonTube Downloader V1.38.0 – Ohne Videoplayer / Portable
-
-- Vollständige Rücknahme des Player-Moduls, der Playlisten-Ansicht und von python-vlc.
-- Kein VLC-Zwang und keine Player-Menüpunkte mehr.
-- Alle Downloader-Funktionen und Bilddateien bleiben wie in V1.36.0 erhalten.
-- Neuer Windows-Portable-Builder mit vollständiger ZIP-Erstellung.
-- FFmpeg und FFprobe sowie Deno werden mit verifizierten Downloads eingebunden.
-- Keine automatische Löschung alter Playlist-Daten oder Einstellungen.

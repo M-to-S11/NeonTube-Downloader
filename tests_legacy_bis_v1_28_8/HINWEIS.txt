@@ -1,6 +1,0 @@
-Diese alten Regressionstests stammen aus den Versionen bis 1.28.8.
-Viele pruefen ausdruecklich den SHA256-Hash der unveraenderten Download-Engine
-und Versionsnummern der alten Releases. In V1.29.0 wurde die Download-Engine
-absichtlich zur Netzwerkstabilitaet angepasst. Daher sind diese Alt-Tests
-nicht fuer das aktuelle Release gueltig.
-Der neue Test tests_v129_api.py liegt im Projekt-Hauptordner.

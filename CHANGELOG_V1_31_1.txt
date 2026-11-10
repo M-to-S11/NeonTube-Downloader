@@ -1,6 +1,0 @@
-NeonTube Downloader V1.31.1 – Eigenes Logo
-
-- Offizielles YouTube-Logo durch das vom Nutzer gelieferte eigene Logo ersetzt.
-- Logo oben links, Fenster-/Installer-Icon und Über-Seite aktualisiert.
-- Hero-Banner in der Startansicht auf eigenes Branding umgestellt.
-- Sichtbare Überschrift oben auf "NeonTube Downloader" vereinheitlicht.

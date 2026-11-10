@@ -1,9 +1,0 @@
-NeonTube Downloader V1.31.0 – Favoriten (06.11.2026)
-
-- YouTube-Suchergebnisse mit klickbarem Herzsymbol speichern/entfernen.
-- Neuer Favoriten-Bereich in der Seitenleiste mit gespeicherten Videos.
-- Favoriten offline lesbar und persistent in AppData; API-Schlüssel unverändert.
-- In Favoriten: Vorschaubild, Titel, Kanal, Dauer, Link übernehmen, Starten, Entfernen.
-- Responsive 1/2/3-Spalten-Karten; geändertes Artwork-Offset für siebten Menüpunkt.
-- Atomare Speicherung; keine doppelten Favoriten; Tests für Datenhaltung und Queue-Pfad.
-- Build-Konfiguration, Installer-Metadaten und Versionsnummer aktualisiert.

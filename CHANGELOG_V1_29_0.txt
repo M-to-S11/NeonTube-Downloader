@@ -1,9 +1,0 @@
-NeonTube Downloader V1.29.0
-
-- Offizielle YouTube Data API v3: Suche, Video-Metadaten, Vorschaubilder
-- Neue Suche im bestehenden Hauptfenster ohne Popup
-- Suchergebnisse mit Link übernehmen / Starten / weitere Treffer
-- Benutzerbezogene API-Key Speicherung (Windows DPAPI)
-- Download-Engine: verbesserte Wiederholungsversuche bei Netzwerkunterbrechungen
-- Keine Automatik-Updates, ursprüngliches 1.28.8-Design beibehalten
-- Beachten: API ist keine Download-API.
