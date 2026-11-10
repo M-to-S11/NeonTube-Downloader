@@ -33,6 +33,7 @@ from downloader import (DownloadJob, DownloadManager, yt_dlp, ffmpeg_path,
                         javascript_runtime_config, MAX_RECOVERY_ATTEMPTS,
                         FOLDER_ORGANIZATIONS, normalize_folder_organization)
 from favorites import FavoriteStore
+from neontube_i18n import LanguageManager
 from search_batch import selected_video_links
 from clipboard_links import ClipboardLinkWatcher, append_unique_links
 from youtube_api import (YouTubeAPIError, get_video_metadata, search_videos,
@@ -884,6 +885,7 @@ class NeonTubeApp(ctk.CTk):
         self.minsize(1130, 700)
 
         self.config_data = load_json(CONFIG_FILE, {})
+        self.i18n = LanguageManager(DATA, self.config_data.get("language", "de"))
         self.config_data.setdefault("download_dir", desktop_downloads())
         self.config_data["folder_organization"] = normalize_folder_organization(
             self.config_data.get("folder_organization", ""))
@@ -975,6 +977,29 @@ class NeonTubeApp(ctk.CTk):
         self.protocol("WM_DELETE_WINDOW", self.on_close)
         self.after(180, self._poll_events)
         self._start_clipboard_watch()
+        self.after(120, self._refresh_translated_ui)
+
+    def _refresh_translated_ui(self):
+        """Translate static interface labels, including newly created cards."""
+        try:
+            self.i18n.collect()
+            self.i18n.refresh_widgets(self)
+            self.after(950, self._refresh_translated_ui)
+        except Exception:
+            # UI translation is optional and must never stop downloading.
+            self.after(1500, self._refresh_translated_ui)
+
+    def _choose_language(self, label):
+        """Persist the selected UI language without changing download settings."""
+        code = self.i18n.languages.get(label)
+        if code is None or not self.i18n.set_language(code):
+            return
+        self.config_data["language"] = code
+        try:
+            save_json(CONFIG_FILE, self.config_data)
+        except OSError:
+            pass
+        self.i18n.refresh_widgets(self)
 
     # ----------------------------------------------------- Primary layout
     def _build_header(self):
@@ -2956,6 +2981,24 @@ class NeonTubeApp(ctk.CTk):
             card, "Durchsuchen", lambda: self._choose_cookiefile(cookies),
             width=110, height=37, font_size=12).grid(
                 row=3, column=2, padx=(0, 20), pady=12)
+
+        language = ctk.StringVar(value=self.i18n.selected_name())
+        make_label(card, "Sprache / Language", 14, TEXT, True,
+                   anchor="w").grid(row=8, column=0, sticky="w",
+                                    padx=(20, 12), pady=(12, 7))
+        ctk.CTkOptionMenu(
+            card, variable=language, values=list(self.i18n.languages),
+            command=self._choose_language,
+            fg_color="#162158", button_color="#253478",
+            button_hover_color="#343b88", corner_radius=10,
+            width=238, height=38,
+            font=ctk.CTkFont(family=FONT, size=13)).grid(
+                row=8, column=1, sticky="w", padx=(0, 14), pady=(12, 7))
+        make_label(
+            card, "Die Sprache wird sofort gespeichert. Für weitere Sprachen werden Oberflächentexte online übersetzt und lokal gespeichert.",
+            11, MUTED, anchor="w", wraplength=680).grid(
+                row=9, column=0, columnspan=3, sticky="w",
+                padx=20, pady=(0, 8))
 
         api_key = ctk.StringVar(value=self.youtube_api_key)
         make_label(card, "YouTube Data API v3", 14, TEXT, True,
